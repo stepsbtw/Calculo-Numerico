@@ -2,8 +2,8 @@
 function upper = gauss_elim (A)
   n = size(A,1);
 
-  for i = 1:n # every line
-    for j = i:n # pivot
+  for j = 1:n # every column
+    for i = i+1:n # pivot from next line
       M = A(i,j)/A(j,j);
       for k = j:n # every element in line
         A(i,k) = A(i,k) - M(i,k) * A(j,k);
